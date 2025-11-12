@@ -14,6 +14,9 @@ on:
   pull_request:
     branches: [ "*" ]
 
+env: 
+  imagename: ${{ github.actor }}/nomImage:${{ github.ref_name }}
+
 jobs:
   build:
 
@@ -29,3 +32,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Build Docker image
+      run: docker build -t ${{ env.imagename }} .
+
+    
+
