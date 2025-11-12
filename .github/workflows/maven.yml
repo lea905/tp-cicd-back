@@ -15,7 +15,7 @@ on:
     branches: [ "*" ]
 
 env: 
-  imagename: ${{github.actor}}/nomimage:${{github.ref_name}}
+  imagename: ${{ vars.DOCKERHUB_USERNAME }}/nomimage:${{ github.ref_name }}
 
 jobs:
   build:
@@ -44,3 +44,4 @@ jobs:
 
     - name: Push Docker image
       run: docker push ${{ env.imagename }}
+
