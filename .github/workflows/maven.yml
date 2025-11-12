@@ -37,7 +37,7 @@ jobs:
       run: docker build -t ${{ env.imagename }} .
 
     - name: Log in to Docker Hub
-      run: echo "${{ secrets.TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      run: echo "${{ secrets.TOKEN }}" | docker login -u "${{ vars.DOCKER_USERNAME }}"
 
     - name: Push Docker image
       run: docker push ${{ env.imagename }}
