@@ -56,7 +56,7 @@ jobs:
 
     steps:
       - name: Deploy Docker image to Render
-        uses: gh-actions-workflows/deploy-docker-render@v1.3
+        uses: gh-actions-workflows/deploy-docker-render@v1.1
         with:
           deploy-hook: ${{ secrets.DOCKERHUB_DEPLOYHOOK }}
           image-url: ${{ env.imagename }}
