@@ -14,7 +14,8 @@ on:
     tags: [ "*" ]
   pull_request:
     branches: [ "*" ]
-  release: [ "*" ]
+  release:
+    types: [ "*" ]
 
 env: 
   imagename: ${{ vars.DOCKERHUB_USERNAME }}/nomimage:${{ github.ref_name }}
